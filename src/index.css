@@ -1,0 +1,92 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: #1a0533;
+  color: #ffffff;
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.5;
+  min-height: 100vh;
+  overscroll-behavior: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Scrollbar oculta en filtros horizontales */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Input date color fix */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+input[type="date"] {
+  color-scheme: dark;
+}
+
+/* Selects */
+select option {
+  background: #2d1b69;
+  color: #ffffff;
+}
+
+/* Animación de pulso para la afirmación */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(155, 89, 182, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(155, 89, 182, 0.6); }
+}
+
+/* Animación de entrada */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animación de estrellas */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* Botones: feedback táctil */
+button:active {
+  transform: scale(0.97);
+}
+
+/* Smooth scroll */
+.content {
+  scroll-behavior: smooth;
+}
+
+/* Focus visible para accesibilidad */
+button:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 2px solid #FFD700;
+  outline-offset: 2px;
+}
+
+/* Placeholder color */
+input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
